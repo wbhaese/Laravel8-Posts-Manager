@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet">
+    <title>View Posts</title>
+
 </head>
 <body>
     <button>
-        <a href="{{route('posts.create')}}">Criar novo post</a>
+        <a href="{{route('posts.create')}}">Create new Post</a>
     </button>
     <hr>
 
@@ -19,23 +21,27 @@
 
     <form action="{{route('posts.search')}}" method="post">
         @csrf
-        <input type="text" name="search" placeholder="Filtar:">
-        <button type="submit">Filtrar</button>
+        <input type="text" name="search" placeholder="Example: Post123...">
+        <button type="submit">Filter</button>
     </form>
 
-    <h1>Index de post</h1>
+    <h1>Post Index</h1>
 
-    @foreach ($posts as $post)
-        <img src="{{url("storage/{$post->image}")}}" alt="{{$post->image}}" style="max-width: 100px">
-        Title: 
-        <h2>{{$post->title}} 
-            <a href="{{route('posts.show', $post->id )}}">Ver detalhes</a>
-            <a href="{{route('posts.edit', $post->id )}}">Editar</a>
-        </h2>
-        <br/>
-            Description: <strong>{{$post->content}}</strong>
-        <br/>
-    @endforeach
+    <div class="posts-view">
+        @foreach ($posts as $post)
+            <div class="single-post">
+                <img src="{{url("storage/{$post->image}")}}" alt="{{$post->image}}" style="max-width: 100px">
+                Title: 
+                <h2>{{$post->title}}</h2>
+                    Description: <strong>{{$post->content}}</strong>
+                <br/>
+                <div class="details-div">
+                    <a href="{{route('posts.show', $post->id )}}">Details</a>
+                    <a href="{{route('posts.edit', $post->id )}}">Edit</a>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
     <hr>
 

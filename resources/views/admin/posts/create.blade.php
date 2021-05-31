@@ -1,8 +1,11 @@
 {{-- @extends('admin.layouts.app') --}}
 
 {{-- @section('title', 'Criar novo Post') --}}
+<head>
+    <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet">
+</head>
 
-<h1>Cadastrar Novo Post</h1>
+<h1>Create new Post</h1>
 
 {{-- @section('content') --}}
 

@@ -33,6 +33,5 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [PostController::class, 'index'])->name('posts.index');
+
