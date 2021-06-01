@@ -2,6 +2,30 @@ h1{
     text-align: center;
 }
 
+img{
+    border-radius: 10px;
+    margin-right: 10%;
+}
+
+.pages-link{
+    color:#ffffff !important;
+}
+
+.search-input{
+    width: 20%;
+}
+
+.top-info{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.index-title{
+   display: flex;
+   align-items: center; 
+}
+
 .posts-view{
     display: flex;
     justify-content: space-evenly;
@@ -28,6 +52,10 @@ h1{
     height: 40%;
 }
 
-.details-div{
-    
+.create-post{
+    margin-top: 5%;
+    display: flex;
+    align-content: flex-end;
+    align-items: flex-end;
+    width: 98%;
 }
