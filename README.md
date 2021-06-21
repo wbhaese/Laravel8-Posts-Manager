@@ -5,3 +5,6 @@ New front:
 
 Old front:
 ![Preview](https://github.com/wbhaese/laravel8-products-manager/blob/master/preview.jpeg)
+
+
+php artisan serve to run
